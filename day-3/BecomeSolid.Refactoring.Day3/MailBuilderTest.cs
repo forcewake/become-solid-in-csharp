@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
-using BecomeSolid.Day3.Builder;
-using BecomeSolid.Day3.Model;
+﻿using System.Net.Mail;
+using BecomeSolid.Refactoring.Day3.Builder;
+using BecomeSolid.Refactoring.Day3.Model;
 using Xunit;
 
-namespace BecomeSolid.Day3
+namespace BecomeSolid.Refactoring.Day3
 {
     public class MailBuilderTest
     {
@@ -22,7 +17,7 @@ namespace BecomeSolid.Day3
                 LastName = "Simpson"
             };
 
-            IMailMessageBuilder<ContactInformation> mailBuilder = new ContactInformationMailMessageBuilder();
+            IMailMessageBuilder<ContactInformation> mailBuilder = new ContactInformationMessageBuilder();
 
             // act
             MailMessage message = mailBuilder
@@ -50,7 +45,7 @@ namespace BecomeSolid.Day3
                 Subsidiary = "Retiro"
             };
 
-            IMailMessageBuilder<ContactInformation> mailBuilder = new ContactInformationMailMessageBuilder();
+            IMailMessageBuilder<ContactInformationSubsidiary> mailBuilder = new ContactInformationSubsidiaryMessageBuilder();
 
             // act
             MailMessage message = mailBuilder
@@ -80,7 +75,7 @@ namespace BecomeSolid.Day3
                 Dimensions = "3x3"
             };
 
-            IMailMessageBuilder<ContactInformation> mailBuilder = new ContactInformationMailMessageBuilder();
+            IMailMessageBuilder<ContactInformationAuction> mailBuilder = new ContactInformationAuctionMessageBuilder();
 
             // act
             MailMessage message = mailBuilder

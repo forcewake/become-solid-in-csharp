@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Net.Mail;
 using System.Text;
-using BecomeSolid.Day3.Model;
+using BecomeSolid.Refactoring.Day3.Model;
 
-namespace BecomeSolid.Day3.Builder
+namespace BecomeSolid.Refactoring.Day3.Builder
 {
     class ContactInformationAuctionMessageBuilder : IMailMessageBuilder<ContactInformationAuction>
     {

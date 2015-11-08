@@ -1,33 +1,33 @@
 using System;
 using System.Net.Mail;
 using System.Text;
-using BecomeSolid.Day3.Model;
+using BecomeSolid.Refactoring.Day3.Model;
 
-namespace BecomeSolid.Day3.Builder
+namespace BecomeSolid.Refactoring.Day3.Builder
 {
-    class ContactInformationSubsidiaryMessageBuilder : IMailMessageBuilder<ContactInformationSubsidiary>
+    public class ContactInformationMessageBuilder : IMailMessageBuilder<ContactInformation>
     {
         private MailMessage mailMessage;
         private StringBuilder body = new StringBuilder();
 
-        public ContactInformationSubsidiaryMessageBuilder()
+        public ContactInformationMessageBuilder()
         {
             mailMessage = new MailMessage();
         }
 
-        public IMailMessageBuilder<ContactInformationSubsidiary> WithTo(string to)
+        public IMailMessageBuilder<ContactInformation> WithTo(string to)
         {
             mailMessage.To.Add(to);
             return this;
         }
 
-        public IMailMessageBuilder<ContactInformationSubsidiary> WithSubject(string subject)
+        public IMailMessageBuilder<ContactInformation> WithSubject(string subject)
         {
             mailMessage.Subject = subject;
             return this;
         }
 
-        public IMailMessageBuilder<ContactInformationSubsidiary> WithFrom(string from)
+        public IMailMessageBuilder<ContactInformation> WithFrom(string from)
         {
             mailMessage.From = new MailAddress(from);
             return this;
@@ -39,11 +39,10 @@ namespace BecomeSolid.Day3.Builder
             return mailMessage;
         }
 
-        public IMailMessageBuilder<ContactInformationSubsidiary> WithEntity(ContactInformationSubsidiary contact)
+        public IMailMessageBuilder<ContactInformation> WithEntity(ContactInformation contact)
         {
             AddBodyLine("Nombre: {0}", contact.FirstName);
             AddBodyLine("Apellido: {0}", contact.LastName);
-            AddBodyLine("Sucursal: {0}", contact.Subsidiary);
             return this;
         }
 
@@ -51,5 +50,6 @@ namespace BecomeSolid.Day3.Builder
         {
             body.AppendLine(String.Format(line, args));
         }
+
     }
 }

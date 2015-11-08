@@ -5,18 +5,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A6F3FCEF-93CD-41CF-B051-78E0F0D94F2B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{0B974D46-1B11-499E-90BC-C1354DF8EC72}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BecomeSolid.Day3</RootNamespace>
-    <AssemblyName>BecomeSolid.Day3</AssemblyName>
+    <RootNamespace>BecomeSolid.Refactoring.Day3</RootNamespace>
+    <AssemblyName>BecomeSolid.Refactoring.Day3</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,7 +25,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -61,17 +59,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builder\ContactInformationMailMessageBuilder.cs" />
     <Compile Include="Builder\IMailMessageBuilder.cs" />
+    <Compile Include="Builder\ContactInformationAuctionMessageBuilder.cs" />
+    <Compile Include="Builder\ContactInformationMessageBuilder.cs" />
+    <Compile Include="Builder\ContactInformationSubsidiaryMessageBuilder.cs" />
     <Compile Include="MailBuilderTest.cs" />
     <Compile Include="Model\ContactInformation.cs" />
     <Compile Include="Model\ContactInformationAuction.cs" />
     <Compile Include="Model\ContactInformationSubsidiary.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
