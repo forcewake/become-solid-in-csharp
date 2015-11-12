@@ -1,0 +1,3 @@
+[submodule "day-4/CommandPipeline"]
+	path = day-4/CommandPipeline
+	url = https://github.com/forcewake/CommandPipeline
