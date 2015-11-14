@@ -1,3 +1,6 @@
 [submodule "day-4/CommandPipeline"]
 	path = day-4/CommandPipeline
 	url = https://github.com/forcewake/CommandPipeline
+[submodule "day-5"]
+	path = day-5
+	url = https://github.com/MrRoundRobin/telegram.bot
